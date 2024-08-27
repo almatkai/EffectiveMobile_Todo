@@ -36,7 +36,6 @@ class FetchTodosOperation: Operation {
             completion(.success(storedTodos))
         } else {
             networkService.fetchTodos { result in
-                print("Fetched todos from network")
                 self.result = result
                 if case .success(let todos) = result {
                     todos.forEach { todo in

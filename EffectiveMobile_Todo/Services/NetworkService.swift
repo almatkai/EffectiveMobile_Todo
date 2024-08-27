@@ -34,7 +34,6 @@ class NetworkServiceImpl: NetworkService {
             
             do {
                 let todoResponse = try JSONDecoder().decode(TodoResponse.self, from: data)
-                print("Success: \(todoResponse.todos[0])")
                 completion(.success(todoResponse.todos))
             } catch {
                 print("Error decoding todos: \(error)")
